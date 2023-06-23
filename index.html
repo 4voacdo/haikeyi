@@ -1,3 +1,115 @@
+<style>
+  :root {
+  --background-color: #35373a;
+  --border-color: rgb(255, 255, 255, 0.1);
+}
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+a,
+p,
+span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+}
+
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+nav > .nav-section {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-logo-section,
+#nav-link section {
+  flex-basis: calc(100% / 3);
+}
+
+#nav-social-section {
+  flex-grow: 1;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  padding-right: 6rem;
+}
+
+#nav-logo-section > a > i {
+  font-size: 2.5rem;
+}
+
+#nav-logo-section {
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+
+#nav-links-section {
+  gap: 3rem;
+  transition: opacity 400ms ease;
+}
+
+#nav-social-section {
+  gap: 3rem;
+}
+
+#nav-links-section:hover > .nav-links-section-item {
+  opacity: 1;
+}
+
+#nav-links-section:hover > .nav-links-section-item:hover {
+  opacity: 0.5;
+}
+
+#nav-logo-section:hover > .nav-logo-section-item {
+  opacity: 1;
+}
+
+#nav-logo-section:hover > .nav-logo-section-item:hover {
+  opacity: 0.5;
+}
+
+#nav-social-section:hover > .nav-social-section-item {
+  opacity: 1;
+}
+
+#nav-social-section:hover > .nav-social-section-item:hover {
+  opacity: 0.5;
+}
+
+#main {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+</style>
+
 <!DOCTYPE html>
 
 <html>
