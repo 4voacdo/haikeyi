@@ -4,13 +4,8 @@
 }
 body {
   background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   margin: 0px;
-  overflow: hidden;
-
-  color: white;
+  overflow: scroll;
 }
 
 * {
@@ -38,6 +33,7 @@ nav {
   display: flex;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  z-index: 1;
 }
 nav > .nav-section {
   padding: 3rem 2rem;
@@ -106,4 +102,5 @@ nav > .nav-section {
   display: block;
   width: 50%;
   margin: auto;
+  z-index: 0;
 }

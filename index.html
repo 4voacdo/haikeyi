@@ -5,13 +5,8 @@
 }
 body {
   background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   margin: 0px;
-  overflow: hidden;
-
-  color: white;
+  overflow: scroll;
 }
 
 * {
@@ -39,6 +34,7 @@ nav {
   display: flex;
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  z-index: 1;
 }
 nav > .nav-section {
   padding: 3rem 2rem;
@@ -105,9 +101,11 @@ nav > .nav-section {
 
 #main {
   display: block;
-  width: 50%;
+  width: 60%;
   margin: auto;
+  z-index: 0;
 }
+
 </style>
 
 <!DOCTYPE html>
@@ -117,24 +115,27 @@ nav > .nav-section {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css" /> 
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="script.js"></script>
     <title>My Portfolio</title>
-    <script src="https://kit.fontawesome.com/b23e886b39.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b23e886b39.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <nav id="nav">
-      <div  id="nav-logo-section" class="nav-section">
+      <div id="nav-logo-section" class="nav-section">
         <a href="#" class="nav-logo-section-item">
           <i class="fa-solid fa-laptop"></i>
         </a>
       </div>
-      <div  id="nav-links-section" class="nav-section">
-        <a href="#" class="nav-links-section-item">ABOUT</a>
-        <a href="#" class="nav-links-section-item">PROJECTS</a>
+      <div id="nav-links-section" class="nav-section">
+        <a href="#about" class="nav-links-section-item">ABOUT</a>
+        <a href="#projects" class="nav-links-section-item">PROJECTS</a>
       </div>
-      <div  id="nav-social-section" class="nav-section">
+      <div id="nav-social-section" class="nav-section">
         <a href="#" class="nav-social-section-item">
           <i class="fa-brands fa-linkedin"></i>
         </a>
@@ -145,25 +146,48 @@ nav > .nav-section {
     </nav>
 
     <main id="main">
-      <section>
+      <section id="about">
+        <img src="#" alt="#">
         <h2>About Me</h2>
-        <p>Est ullamco elit aliqua est officia et. Consectetur officia sint Lorem. Non amet laborum minim. Fugiat et ea dolore fugiat magna deserunt aliqua veniam incididunt irure. In cupidatat id sint. Minim exercitation laboris magna mollit in laborum ipsum. Non ea nostrud veniam exercitation incididunt laborum esse. Irure minim cupidatat incididunt ullamco in ad deserunt fugiat non eu est Lorem velit et proident.</p>
+        <p>Hi! I am Asher Ng, a student studying at the School of Science and Tehnology, Singapore. I have a keen interest in Computing, and would like to continue pursuing this area of education. </p>
       </section>
-      <section>
+      <section id="projects">
         <h2>My Projects</h2>
-        <article>
-          <h3>Project 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </article>
-        <article>
-          <h3>Project 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </article>
+        <h3>Project KMnO4</h3>
+        <p>
+          Est ullamco elit aliqua est officia et. Consectetur officia sint
+          Lorem. Non amet laborum minim. Fugiat et ea dolore fugiat magna
+          deserunt aliqua veniam incididunt irure. In cupidatat id sint. Minim
+          exercitation laboris magna mollit in laborum ipsum. Non ea nostrud
+          veniam exercitation incididunt laborum esse. Irure minim cupidatat
+          incididunt ullamco in ad deserunt fugiat non eu est Lorem velit et
+          proident.
+        </p>
+        <h3>Wordlo</h3>
+        <p>
+          Est ullamco elit aliqua est officia et. Consectetur officia sint
+          Lorem. Non amet laborum minim. Fugiat et ea dolore fugiat magna
+          deserunt aliqua veniam incididunt irure. In cupidatat id sint. Minim
+          exercitation laboris magna mollit in laborum ipsum. Non ea nostrud
+          veniam exercitation incididunt laborum esse. Irure minim cupidatat
+          incididunt ullamco in ad deserunt fugiat non eu est Lorem velit et
+          proident.
+        </p>
+        <h3>Cookie clicker</h3>
+        <p>
+          Est ullamco elit aliqua est officia et. Consectetur officia sint
+          Lorem. Non amet laborum minim. Fugiat et ea dolore fugiat magna
+          deserunt aliqua veniam incididunt irure. In cupidatat id sint. Minim
+          exercitation laboris magna mollit in laborum ipsum. Non ea nostrud
+          veniam exercitation incididunt laborum esse. Irure minim cupidatat
+          incididunt ullamco in ad deserunt fugiat non eu est Lorem velit et
+          proident.
+        </p>
       </section>
     </main>
-
-</body>
+  </body>
 </html>
+
 <!-- 
 tags: 
 <h1> header </h2>
