@@ -4,12 +4,11 @@ import './style.css';
 // Write Javascript code!
 const appDiv = document.getElementById('app');
 
-Array.from(document.getElementsByClassName('nav-link-section-item')).forEach(
+Array.from(document.getElementsByClassName('menu-item')).forEach(
   (item, index) => {
     item.onmouseover = () => {
-      nav.dataset.activeIndex = index;
+      menu.dataset.activeIndex = index;
     };
   }
 );
-
 

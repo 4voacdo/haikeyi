@@ -7,7 +7,7 @@
 }
 body {
   background-color: var(--background-color);
-  padding-top: 10rem;
+  padding-top: -10rem;
   margin: 0px;
   overflow: scroll;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 h1, h2, h3, a, p, span, div {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Rubik', 'Inter', sans-serif;
   font-weight: 400;
   color: white;
   font-size: 1.2rem;
@@ -32,6 +32,84 @@ a {
   text-decoration: none;
 }
 
+#menu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  transition: all 400ms ease;
+}
+
+.menu-items {
+  margin-left: clamp 4rem, 20vw, 48rem;
+  position: relative;
+  z-index: 4;
+}
+
+#menu-items:hover > .menu-item {
+  opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+.menu-item {
+  color: white;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.23rem, 0.5vw, 1rem) 0rem;
+  transition: opacity 400ms ease;
+}
+
+#menu-background-pattern {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.5) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 32vmin 32vmin;
+
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+
+  transition: opacity 800ms ease, background-size 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+  background-size: 22vmin 22vmin;
+  opacity: 0.5;
+}
+
+#menu[data-active-index='0'] > #menu-background-pattern {
+  background-position: 10% -25%;
+  transition: 800ms;
+}
+
+#menu[data-active-index='1'] > #menu-background-pattern {
+  background-position: 10% -50%;
+  transition: 800ms;
+}
+
+#menu[data-active-index='2'] > #menu-background-pattern {
+  background-position: 10% -75%;
+  transition: 800ms;
+}
+
+#menu[data-active-index='3'] > #menu-background-pattern {
+  background-position: 10% -100%;
+  transition: 800ms;
+}
+
+
 nav {
   display: flex;
   position: fixed;
@@ -40,7 +118,7 @@ nav {
   width: 100%;
   background-color: #35373A;
   border-bottom: 1px solid var(--border-color);
-  z-index: 1;
+  z-index: 5;
 }
 nav > .nav-section {
   padding: 3rem 2rem;
@@ -106,16 +184,24 @@ nav > .nav-section {
 }
 
 #main {
-  padding-top: 5rem;
+  padding-top: 4rem;
   display: block;
   width: 80vmax;
   margin: auto;
   z-index: 0;
+
+
 }
 
-#about {
+#about{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   display: flex;
   gap: 5%;
+}
+
+#projects, #experience, #awards {
+  padding-top: 5rem;
 }
 
 #about img {
@@ -234,7 +320,7 @@ footer p{
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" >
     <script src="script.js"></script>
-    <title>My Portfolio</title>
+    <title>Asher Ng</title>
     <script
       src="https://kit.fontawesome.com/b23e886b39.js"
       crossorigin="anonymous"
@@ -244,12 +330,12 @@ footer p{
   <body>
     <nav id="nav">
       <div id="nav-logo-section" class="nav-section">
-        <a href="#" class="nav-logo-section-item">
+        <a href="#about" class="nav-logo-section-item">
           <i class="fa-solid fa-laptop"></i>
         </a>
       </div>
       <div id="nav-links-section" class="nav-section">
-        <a href="#about" class="nav-links-section-item">ABOUT</a>
+        <a href="#menu" class="nav-links-section-item">HOME</a>
         <a href="#projects" class="nav-links-section-item">PROJECTS</a>
         <a href="#experience" class="nav-links-section-item">EXPERIENCE</a>
         <a href="#awards" class="nav-links-section-item">AWARDS</a>
@@ -265,6 +351,18 @@ footer p{
     </nav>
 
     <main id="main">
+      <div id="menu">
+        <div id="menu-items">
+          <a href="#about" class="menu-item">Home</a>
+          <a href="#projects" class="menu-item">Projects</a>
+          <a href="#experience" class="menu-item">Experience</a>
+          <a href="#awards" class="menu-item">Awards</a>
+        </div>
+        <div id="menu-background-pattern"></div>
+      </div>
+      <div id="Home">
+      </div>
+
       <section id="about">
         <img src="torque robot chair pose.png" alt="artstation robot design conspiracy">
         <div id="about-me">
@@ -353,18 +451,104 @@ footer p{
       </section>
 
       <section id="experience">
+        <h2>Experience</h2>
 
       </section>
 
       <section id="awards">
+        <h2>Awards</h2>
+        <div class="card-grid">
+
+          <div id="card">
+            <img src="MentalStop webpage.png" alt="MentalStop">
+
+              <div id="card-details">
+                <span class="tag">Project</span>
+                <span class="tag">UI Design</span>
+                <span class="tag">Competition</span>
+                <div class="name">MentalStop</div>
+                <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
+                  Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
+                  Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
+                  Consequat eiusmod culpa irure ad sit pariatur fugiat magna esse irure. 
+                  Incididunt duis excepteur dolore id elit ex.
+                </p>
+                <button class="read-more">Read More</button>  
+              </div>
+
+          </div>
+
+          <div id="card">
+            <img src="project kmno4 code.png" alt="KMnO4">
+
+              <div id="card-details">
+                <span class="tag">Project</span>
+                <span class="tag">Python</span>
+                <div class="name">Project KMnO4</div>
+                <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
+                  Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
+                  Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
+                  Consequat eiusmod culpa irure ad sit pariatur fugiat magna esse irure. 
+                  Incididunt duis excepteur dolore id elit ex.
+                </p>
+                <button class="read-more">Read More</button>  
+              </div>
+          </div>
+
+          <div id="card">
+            <img src="wordlo code.png" alt="wordle">
+
+              <div id="card-details">
+                <span class="tag">Project</span>
+                <span class="tag">Python</span>
+                <div class="name">Wordlo</div>
+                <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
+                  Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
+                  Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
+                  Consequat eiusmod culpa irure ad sit pariatur fugiat magna esse irure. 
+                  Incididunt duis excepteur dolore id elit ex.
+                </p>
+                <button class="read-more">Read More</button>  
+              </div>
+          </div>
+
+          <div id="card">
+            <img src="cookie clicker code.png" alt="cookie">
+
+              <div id="card-details">
+                <span class="tag">Project</span>
+                <span class="tag">Python</span>
+                <div class="name">Cookie Clicker</div>
+                <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
+                  Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
+                  Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
+                  Consequat eiusmod culpa irure ad sit pariatur fugiat magna esse irure. 
+                  Incididunt duis excepteur dolore id elit ex.
+                </p>
+                <button class="read-more">Read More</button>  
+              </div>
+          </div>
+          
+        </div>
 
       </section>
 
     </main>
     <footer>
-      <p>v1.0.0 • Last updated 25 June 2023 <br> Built by Asher Ng with HTML and CSS <br>Icons by Font Awesome</p>
+      <p>v1.0.1 • Last updated 25 June 2023 <br> Built by Asher Ng with HTML and CSS <br>Icons by Font Awesome</p>
     </footer>
   </body>
+
+  <script>
+    Array.from(document.getElementsByClassName('menu-item')).forEach(
+      (item, index) => {
+        item.onmouseover = () => {
+          menu.dataset.activeIndex = index;
+        };
+      }
+    );
+  </script>
+
 </html>
 
 <!-- 
