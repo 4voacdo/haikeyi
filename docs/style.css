@@ -4,6 +4,7 @@
 }
 body {
   background-color: var(--background-color);
+  padding-top: 10%;
   margin: 0px;
   overflow: scroll;
 }
@@ -12,12 +13,7 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-a,
-p,
-span {
+h1, h2, h3, a, p, span, div {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: white;
@@ -31,7 +27,11 @@ a {
 
 nav {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color: #35373A;
   border-bottom: 1px solid var(--border-color);
   z-index: 1;
 }
@@ -100,7 +100,43 @@ nav > .nav-section {
 
 #main {
   display: block;
-  width: 50%;
+  width: 60%;
   margin: auto;
   z-index: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  margin-bottom: 10px;
+}
+
+.card-content a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f1f1f1;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
 }
