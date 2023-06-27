@@ -1,9 +1,10 @@
 <style>
-  :root {
-  --background-color: #35373a;
-  --background-color-lighter: #6d7076;
-  --border-color: rgb(255, 255, 255, 0.1);
-  --border-color-lighter: rgba(255, 255, 255, 0.3);
+
+:root {
+--background-color: #35373a;
+--background-color-lighter: #55595e;
+--border-color: rgb(255, 255, 255, 0.1);
+--border-color-lighter: rgba(255, 255, 255, 0.3);
 }
 body {
   background-color: var(--background-color);
@@ -20,7 +21,7 @@ h1, h2, h3, a, p, span, div {
   font-family: 'Rubik', 'Inter', sans-serif;
   font-weight: 400;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 h1, h2 {
@@ -31,6 +32,70 @@ a {
   font-size: 2rem;
   text-decoration: none;
 }
+
+
+nav {
+  display: flex;
+  position: fixed;
+  height: 12vh;
+
+  width: 100%;
+  background-color: #35373A;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1;
+  z-index: 5;
+}
+nav > .nav-section {
+  padding: 3rem 2rem;
+  display: flex;
+  gap: 1rem;
+  border-left: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+}
+#nav-logo-section,
+#nav-link section {
+  flex-basis: calc(100% / 4.5);
+}
+#nav-social-section {
+  flex-grow: 1;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  padding-right: 6rem;
+}
+#nav-logo-section > a > i {
+  font-size: 2.5rem;
+}
+#nav-logo-section {
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+#nav-links-section {
+  gap: 3rem;
+  transition: opacity 400ms ease;
+}
+#nav-social-section {
+  gap: 3rem;
+}
+#nav-links-section:hover > .nav-links-section-item {
+  opacity: 1;
+}
+#nav-links-section:hover > .nav-links-section-item:hover {
+  opacity: 0.5;
+}
+#nav-logo-section:hover > .nav-logo-section-item {
+  opacity: 1;
+}
+#nav-logo-section:hover > .nav-logo-section-item:hover {
+  opacity: 0.5;
+}
+#nav-social-section:hover > .nav-social-section-item {
+  opacity: 1;
+}
+#nav-social-section:hover > .nav-social-section-item:hover {
+  opacity: 0.5;
+}
+
 
 #menu {
   height: 100vh;
@@ -57,7 +122,6 @@ a {
 .menu-item {
   color: white;
   font-size: clamp(3rem, 8vw, 8rem);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
   display: block;
   text-decoration: none;
@@ -74,7 +138,7 @@ a {
     transparent 9%
   );
   background-position: 0% 0%;
-  background-size: 32vmin 32vmin;
+  background-size: 22vmin 22vmin;
 
   position: relative;
   left: 0px;
@@ -85,102 +149,28 @@ a {
 }
 
 #menu-items:hover ~ #menu-background-pattern {
-  background-size: 22vmin 22vmin;
+  background-size: 12vmin 12vmin;
   opacity: 0.5;
 }
 
 #menu[data-active-index='0'] > #menu-background-pattern {
-  background-position: 10% -25%;
+  background-position: 0% -25%;
   transition: 800ms;
 }
 
 #menu[data-active-index='1'] > #menu-background-pattern {
-  background-position: 10% -50%;
+  background-position: 0% -50%;
   transition: 800ms;
 }
 
 #menu[data-active-index='2'] > #menu-background-pattern {
-  background-position: 10% -75%;
+  background-position: 0% -75%;
   transition: 800ms;
 }
 
 #menu[data-active-index='3'] > #menu-background-pattern {
-  background-position: 10% -100%;
+  background-position: 0% -100%;
   transition: 800ms;
-}
-
-
-nav {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #35373A;
-  border-bottom: 1px solid var(--border-color);
-  z-index: 5;
-}
-nav > .nav-section {
-  padding: 3rem 2rem;
-  display: flex;
-  gap: 1rem;
-  border-left: 1px solid var(--border-color);
-  align-items: center;
-  justify-content: center;
-}
-
-#nav-logo-section,
-#nav-link section {
-  flex-basis: calc(100% / 4.5);
-}
-
-#nav-social-section {
-  flex-grow: 1;
-  justify-content: flex-end;
-  font-size: 1.5rem;
-  padding-right: 6rem;
-}
-
-#nav-logo-section > a > i {
-  font-size: 2.5rem;
-}
-
-#nav-logo-section {
-  justify-content: flex-start;
-  padding-left: 3rem;
-}
-
-#nav-links-section {
-  gap: 3rem;
-  transition: opacity 400ms ease;
-}
-
-#nav-social-section {
-  gap: 3rem;
-}
-
-#nav-links-section:hover > .nav-links-section-item {
-  opacity: 1;
-}
-
-#nav-links-section:hover > .nav-links-section-item:hover {
-  opacity: 0.5;
-}
-
-#nav-logo-section:hover > .nav-logo-section-item {
-  opacity: 1;
-}
-
-#nav-logo-section:hover > .nav-logo-section-item:hover {
-  opacity: 0.5;
-}
-
-#nav-social-section:hover > .nav-social-section-item {
-  opacity: 1;
-}
-
-#nav-social-section:hover > .nav-social-section-item:hover {
-  opacity: 0.5;
 }
 
 #main {
@@ -198,6 +188,8 @@ nav > .nav-section {
   padding-bottom: 5rem;
   display: flex;
   gap: 5%;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 #projects, #experience, #awards {
@@ -235,23 +227,13 @@ img {
   border: 1px solid var(--border-color);
 }
 
-#card img {
+#projects img {
   object-fit: cover;
-  object-position: 0px 0px;
 }
 
-#tags {
-  gap: 20px 100px;
-}
-
-.tag {
-  padding: 4px 8px;
-  border: 1px solid var(--border-color);
-
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 500;
-  color: white;
+#awards img{
+  object-fit: cover;
+  object-position: 0px -80px;
 }
 
 .name {
@@ -309,6 +291,7 @@ footer p{
   font-size: 12px;
 }
 
+
 </style>
 
 <!DOCTYPE html>
@@ -335,7 +318,7 @@ footer p{
         </a>
       </div>
       <div id="nav-links-section" class="nav-section">
-        <a href="#menu" class="nav-links-section-item">HOME</a>
+        <a href="#about" class="nav-links-section-item">HOME</a>
         <a href="#projects" class="nav-links-section-item">PROJECTS</a>
         <a href="#experience" class="nav-links-section-item">EXPERIENCE</a>
         <a href="#awards" class="nav-links-section-item">AWARDS</a>
@@ -364,7 +347,7 @@ footer p{
       </div>
 
       <section id="about">
-        <img src="torque robot chair pose.png" alt="artstation robot design conspiracy">
+        <img src="torque robot chair pose.png" alt="artstation robot design conspiracy" draggable="false">
         <div id="about-me">
           <h2>About Me</h2>
           <p>Hi! I am Asher Ng, a student studying at the School of Science and Technology, Singapore. 
@@ -378,12 +361,9 @@ footer p{
         <div class="card-grid">
 
           <div id="card">
-            <img src="MentalStop webpage.png" alt="MentalStop">
+            <img src="MentalStop webpage.png" alt="MentalStop" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">UI Design</span>
-                <span class="tag">Competition</span>
                 <div class="name">MentalStop</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
@@ -397,11 +377,9 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="project kmno4 code.png" alt="KMnO4">
+            <img src="project kmno4 code.png" alt="KMnO4" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
                 <div class="name">Project KMnO4</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
@@ -414,11 +392,9 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="wordlo code.png" alt="wordle">
+            <img src="wordlo code.png" alt="wordle" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
                 <div class="name">Wordlo</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
@@ -431,11 +407,9 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="cookie clicker code.png" alt="cookie">
+            <img src="cookie clicker code.png" alt="cookie" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
                 <div class="name">Cookie Clicker</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
@@ -460,13 +434,10 @@ footer p{
         <div class="card-grid">
 
           <div id="card">
-            <img src="MentalStop webpage.png" alt="MentalStop">
+            <img src="IMDA award.jpeg" alt="MentalStop" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">UI Design</span>
-                <span class="tag">Competition</span>
-                <div class="name">MentalStop</div>
+                <div class="name">Distinction for Infocomm Media Club Youth Awards (Technology Category)</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
                   Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
@@ -479,12 +450,10 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="project kmno4 code.png" alt="KMnO4">
+            <img src="national ai student challenge trophy.jpeg" alt="KMnO4" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
-                <div class="name">Project KMnO4</div>
+                <div class="name">Top 5 Teams for National AI Student Challenge Category A</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
                   Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
@@ -496,12 +465,10 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="wordlo code.png" alt="wordle">
+            <img src="innofest trophies.jpeg" alt="wordle" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
-                <div class="name">Wordlo</div>
+                <div class="name">2nd Place for Innofest Challenge (and others)</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
                   Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
@@ -513,12 +480,10 @@ footer p{
           </div>
 
           <div id="card">
-            <img src="cookie clicker code.png" alt="cookie">
+            <img src="Inc trophies.jpeg" alt="cookie" draggable="false">
 
               <div id="card-details">
-                <span class="tag">Project</span>
-                <span class="tag">Python</span>
-                <div class="name">Cookie Clicker</div>
+                <div class="name">2nd Runner Up for Talent Development programme project</div>
                 <p class="card-text-full">Reprehenderit sunt do deserunt laborum sint laborum amet. 
                   Proident dolore eu pariatur quis amet commodo et consequat exercitation labore. 
                   Nostrud in eu quis adipisicing ea consectetur nostrud dolore adipisicing cupidatat laboris irure ut. 
@@ -535,7 +500,7 @@ footer p{
 
     </main>
     <footer>
-      <p>v1.0.1 • Last updated 25 June 2023 <br> Built by Asher Ng with HTML and CSS <br>Icons by Font Awesome</p>
+      <p>v1.0.2 • Last updated 25 June 2023 <br> Built by Asher Ng with HTML and CSS <br>Icons by Font Awesome</p>
     </footer>
   </body>
 
